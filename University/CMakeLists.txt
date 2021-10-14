@@ -10,4 +10,5 @@ add_executable(
     main.cpp
     student.cpp
     elective_discipline.cpp
+    tcollection.h
 )
