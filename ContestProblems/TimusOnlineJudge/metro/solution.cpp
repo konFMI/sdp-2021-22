@@ -8,7 +8,8 @@ class Comparer {
     public:
         bool operator() (std::pair<int, int> x, std::pair<int, int> y) {
             return abs(x.first - x.second) < abs(y.first - y.second) &&
-                   (x.first == y.first && x.second < y.second || x.first < y.first && x.second < y.second);
+                   ((x.first == y.first && x.second < y.second) ||
+                    (x.first < y.first && x.second < y.second));
         }
 };
 

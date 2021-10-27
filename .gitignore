@@ -1,9 +1,2 @@
-CMakeFiles
-Makefile
-*.0
-*.bin
-*.out
-*.cmake
-CMakeCache*
-Problems/TimusOnlineJudge/DemocracyInDanger/DemocracyInDanger
-Problems/TimusOnlineJudge/Metro/Metro
+.vscode/*
+build/*

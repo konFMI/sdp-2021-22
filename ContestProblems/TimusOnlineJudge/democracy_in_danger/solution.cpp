@@ -14,7 +14,7 @@ int main() {
         groups.push(-temp);
     }
 
-    while(groups.size() >= (kGroups / 2 + 1)) {
+    while(groups.size() >= (std::size_t)(kGroups / 2 + 1)) {
         minSupporters += (-groups.top() / 2) + 1;
         groups.pop();
     }
