@@ -3,7 +3,5 @@ democracy_in_danger_src_files = files(
 )
 
 executable('dd-solution',
-           democracy_in_danger_src_files,
-           install:  true,
-           install_dir: '../../../bin'
+           democracy_in_danger_src_files
           )
