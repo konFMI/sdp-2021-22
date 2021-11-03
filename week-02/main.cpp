@@ -1,8 +1,8 @@
 #include <iostream>
-#include "student.h"
+#include "my_susy.h"
 
 int main() {
-    Student st;
+     MySusy susy;
 
     return 0;
 }
