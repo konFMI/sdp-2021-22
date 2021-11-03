@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define DEBUG
-#include "TCollection.hpp"
+#include "TCollection.h"
 
 int main(int argc, char* argcv[]) {
 
@@ -10,16 +10,15 @@ int main(int argc, char* argcv[]) {
 
     
     ReturnType ret = integers.Create(5);
-    LOG_INFO(TO_STRING(ret));
-    printf("%s\n", TO_STRING(ret));
+    printf("%s\n", ToString(ret));
     
 //    for (int i = 0; i < 5; i++) {
 //        integers[i] = i;
 //    }
 
-//    for (int i = 0; i < 5; i++) {
-//        printf(" %d", integers[i]);
-//    }
+//   for (int i = 0; i < 5; i++) {
+//       printf(" %d", integers[i]);
+//   }
 
     return 0;
 }

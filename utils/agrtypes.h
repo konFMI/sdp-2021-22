@@ -1,5 +1,5 @@
-#ifndef MY_TYPES_H
-#define MY_TYPES_H
+#ifndef AGRTYPES_H
+#define AGRTYPES_H
 
 #define INTEGER  int
 #define CHAR     char
@@ -17,7 +17,7 @@ enum ReturnType {
     AGRFreeMemoryFailure            = 6
 };
 
-CONST CHAR *TO_STRING(ReturnType returnType) {
+CONST CHAR *ToString(ReturnType returnType) {
     switch(returnType) {
         case AGRReturnNone:
             return "AGRReturnNone";
@@ -37,4 +37,4 @@ CONST CHAR *TO_STRING(ReturnType returnType) {
             return "";
     }
 }
-#endif //MY_TYPES_Hs
+#endif //AGRTYPES_H

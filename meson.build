@@ -1,7 +1,9 @@
-project('sdp-2021-22', 'cpp')
+project('sdp-2021-22',
+        'cpp',
+        version: '0.0.1')
 
 my_utils_inc = include_directories(
-    'my_utils/'
+    'utils/'
 )
 #############################################
 #   The order of visiting is important.     #
@@ -14,8 +16,8 @@ subdir('week-02/student')
 subdir('week-02/my-susy')
 subdir('week-02/collection')
 subdir('week-02')
-#subdir('week-03')
-#subdir('ContestProblems/TimusOnlineJudge')
+subdir('week-03')
+subdir('ContestProblems/TimusOnlineJudge')
 
 # Testing
 subdir('testing')

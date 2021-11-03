@@ -3,7 +3,7 @@ collection_incl = [
 ]
 
 collection_src_files = files(
-    'TCollection.hpp'
+    'TCollection.h'
 )
 
 collection_lib = shared_library('collection',

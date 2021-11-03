@@ -1,3 +1,5 @@
 #!/bin/bash
 
-pushd build/ && meson test && popd;
+pushd build/ > /dev/null
+meson test
+popd > /dev/null
