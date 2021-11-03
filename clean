@@ -1,8 +1,13 @@
 #!/bin/bash
 
-MESON_BUILD_DIR="build/"
+clear_dir(){
+	if [ -d $1  ]
+	then
+		rm -Rf $1;
+	fi
 
-if [ -d "${MESON_BUILD_DIR}" ]
-then
-    rm -Rf ${MESON_BUILD_DIR};
-fi
+}
+
+clear_dir build
+clear_dir builddir
+

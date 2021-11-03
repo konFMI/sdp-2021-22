@@ -10,7 +10,7 @@ my_utils_inc = include_directories(
 #   We want to build out *.so object first. #
 #   So we can use them in main.cpp          #
 #############################################
-
+subdir('core')
 subdir('week-02/elective_discipline')
 subdir('week-02/student')
 subdir('week-02/my-susy')
