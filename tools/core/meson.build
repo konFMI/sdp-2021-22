@@ -4,7 +4,7 @@ memory_incl = [
 ]
 
 memory_src_files = files(
-    'agrmemory.h'
+    'agrmemory.cpp'
 )
 
 memory_lib = shared_library('agrmemory',

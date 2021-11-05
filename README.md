@@ -2,19 +2,21 @@
 
  Here will be the code from homeworks and projects for
  the course "Data Structures and Algorithms 2021/22"
- The build system is meson + ninja. The folder structure is by weeks: week-01,..
+ The build system is meson + ninja.
 
- There are to scripts to be run in order to build the code.
- First setup.sh
+### Tools
+ First you must source the file tools/scripts.sh. After that
+ you will have the following functions to run from the console.
+ 
+ These are the scripts to be run in order to compile,rebuild,
+ and test the code. There is a clean script that removes all
+ generated folders.
 
-. setup.sh
+agr-clean       - Removes the generated directories and files.
+agr-compile     - Compiles the code.
+agr-setup-build - Performs a clean and recretes the build.
+agr-test-all    - Runs custom unit tests.
 
- This will setup meson.
- After that only use build.sh
-
-. build.sh
-
- The executable files are in build/<coresponding-name-of-week-problem>.
- To remove the build directory used by meson run the clean.sh
-
-. clean.sh
+### Tips and tricks
+There is a todo: to add a meson_options.txt file that will
+spesify what folder to build/compile or what test to be run and so on. 

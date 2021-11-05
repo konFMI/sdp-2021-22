@@ -1,18 +1,5 @@
-#ifndef AGRMEMORY_H
 #include <stdlib.h>
-
-class AGRMemory {
-    public:
-
-        static void* Alloc(int num, int size);
-        static void* Calloc(int num, int sizes);
-        static void Free(void *ptr);
-
-    private:
-    AGRMemory();
-    ~AGRMemory();
-
-};
+#include "agrmemory.h"
 
 AGRMemory::AGRMemory() {
 }
@@ -45,5 +32,3 @@ void* AGRMemory::Calloc(int num, int size) {
 void AGRMemory::Free(void *ptr) {
     free(ptr);
 }
-
-#endif //AGRMEMORY_H
