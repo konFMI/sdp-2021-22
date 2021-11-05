@@ -4,17 +4,26 @@ ROOT_DIR=/home/konfmi/Projects/fmi/sdp-2021-22/
 TOOLS_DIR=${ROOT_DIR}/tools/
 
 # Removes dir if exists.
-_clear_dir() {
+_rm_dir() {
 	if [ -d $1  ]
 	then
 		rm -Rf $1;
 	fi
 }
 
+# Removes all dirs found with find.
+_rm_all_dir() {
+    for dir_path in $(find ${ROOT_DIR} -type d -name $1)
+    do
+        echo "Remove ${dir_path}";
+        rm -Rf ${dir_path};
+    done
+}
+
 # Removes build directories from root of project.
 agr-clean() {
-    _clear_dir ${ROOT_DIR}/build
-    _clear_dir ${ROOT_DIR}/builddir
+    _rm_all_dir build;
+    _rm_all_dir builddir;
 }
 
 # Compiles the code.

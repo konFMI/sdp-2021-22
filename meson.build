@@ -18,6 +18,7 @@ subdir('week-02/my-susy')
 subdir('week-02/collection')
 subdir('week-02')
 subdir('week-03')
+subdir('week-05')
 
 # Testing
 subdir('tools/testing')
