@@ -1,7 +1,9 @@
 #!/bin/bash
 
-ROOT_DIR=/home/konfmi/Projects/fmi/sdp-2021-22/
-TOOLS_DIR=${ROOT_DIR}/tools/
+ROOT_DIR=/home/konfmi/Projects/fmi/sdp-2021-22
+BIN_DIR=${ROOT_DIR}/bin
+TOOLS_DIR=${ROOT_DIR}/tools
+BUILD_DIR=${ROOT_DIR}/build
 
 # Removes dir if exists.
 _rm_dir() {
@@ -28,7 +30,7 @@ agr-clean() {
 
 # Compiles the code.
 agr-compile() {
-    pushd ${ROOT_DIR}/build > /dev/null
+    pushd ${BUILD_DIR} > /dev/null
     ninja
     popd > /dev/null;
 }
@@ -43,7 +45,33 @@ agr-setup-build() {
 
 # Runs all the available tests.
 agr-test-all(){
-    pushd build/ > /dev/null
+
+    if [ ! -d ${BUILD_DIR} ]
+    then
+        agr-setup-build
+        agr-compile
+    fi
+
+    pushd ${BUILD_DIR} > /dev/null
     meson test
     popd > /dev/null
 }
+
+agr-copy-bins() {
+    SEARCH_BUILD_DIRS=$(find ${BUILD_DIR}/ -mindepth 1 -maxdepth 1 -type d \( ! -iname "*meson*" ! -iname "*ninja*" \))
+
+    if [ ! -d ${BIN_DIR} ]
+    then
+        mkdir ${BIN_DIR}
+    fi
+
+    for dir in ${SEARCH_BUILD_DIRS}
+    do
+        temp=$(find ${dir} -type f -executable \( ! -iname "*.so" \))
+        for bins in ${temp}
+        do
+            cp ${bins} ${BIN_DIR}
+        done
+    done
+}
+

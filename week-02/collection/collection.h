@@ -1,11 +1,11 @@
-#ifndef TCOLLECTION_H
-#define TCOLLECTION_H
+#ifndef COLLECTION_H
+#define COLLECTION_H
 
 #include "agrtypes.h"
 #include "agrlog.h"
 
 template <typename T>
-class TCollection
+class Collection
 {
 	private:
 		T* 		m_dArray;
@@ -44,10 +44,10 @@ class TCollection
 		}
 	public:
 
-		TCollection() : m_dArray(NULL), m_size(-1) {
+		Collection() : m_dArray(NULL), m_size(-1) {
 		}
 
-		~TCollection() {
+		~Collection() {
 			FreeMemory(static_cast<VOID*>(m_dArray), m_size);
 		}
 

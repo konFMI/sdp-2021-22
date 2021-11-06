@@ -2,23 +2,28 @@ project('sdp-2021-22',
         'cpp',
         version: '0.0.1')
 
-my_utils_inc = include_directories(
-    'tools/utils/'
-)
+subdirs_to_visit = [
+    'tools',
+    'week-02',
+    'week-03',
+    'week-05'
+]
 
-#############################################
-#   The order of visiting is important.     #
-#   We want to build out *.so object first. #
-#   So we can use them in main.cpp          #
-#############################################
-subdir('tools/core')
-subdir('week-02/elective_discipline')
-subdir('week-02/student')
-subdir('week-02/my-susy')
-subdir('week-02/collection')
-subdir('week-02')
-subdir('week-03')
-subdir('week-05')
+arguments = [
+    '-DDEBUG'
+]
 
-# Testing
-subdir('tools/testing')
+## Include enabled tests
+if get_option('test_llist').enabled()
+    subdirs_to_visit += 'unit_tests/week-05'
+endif
+if get_option('test_memory').enabled()
+    subdirs_to_visit += 'unit_tests/core'
+endif
+if get_option('test_collection').enabled()
+    subdirs_to_visit += 'unit_tests/week-02'
+endif
+
+foreach _dir : subdirs_to_visit
+    subdir(_dir)
+endforeach  

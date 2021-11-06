@@ -1,21 +1,49 @@
-#agrlinked_list
-linked_list_incl = [
-    my_utils_inc
+#agrlinkedlist
+agrlinked_list_includes = [
+    include_directories('.'),
+    agrutils_includes
 ]
 
-linked_list_src_files = files(
-    'agrlinkedlist.cpp'
+agrlinked_list_src_files = files(
+    'linkedlist.h'
 )
 
-linked_list_lib = shared_library('agrlist',
-                                 linked_list_src_files)
+agrlinked_list_depencencies = [
+    agrutils_dep
+]
 
-linked_list_inc_dir  = include_directories('.')
-linked_list_incl    += linked_list_inc_dir
+agrlinked_list_lib = shared_library('agrllist',
+                                   agrlinked_list_src_files,
+                                   include_directories: agrlinked_list_includes,
+                                   dependencies: agrlinked_list_depencencies
+                                  )
 
-linked_list_dep = declare_dependency(
-    link_with: linked_list_lib,
-    include_directories: linked_list_incl
+agrlinkedlist_dep = declare_dependency(
+    link_with: agrlinked_list_lib,
+    include_directories: agrlinked_list_includes
 )
 
-subdir('tests')
+#agrlist
+agrlist_includes = [
+    include_directories('.'),
+    agrutils_includes
+]
+
+agrlist_src_files = files(
+    'list.cpp'
+)
+
+agrlist_depencencies = [
+    agrutils_dep
+]
+
+agrlist_lib = shared_library('agrlist',
+                             agrlist_src_files,
+                             include_directories: agrlist_includes,
+                             dependencies: agrlist_depencencies
+                            )
+
+agrlist_dep = declare_dependency(
+    link_with: agrlist_lib,
+    include_directories: agrlist_includes
+)

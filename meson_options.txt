@@ -1,0 +1,4 @@
+## Enable tests
+option('test_llist', type : 'feature', value : 'enabled', description: 'LinkedList list testing')
+option('test_memory', type : 'feature', value : 'disabled', description: 'AGRMemory testing')
+option('test_collection', type : 'feature', value : 'disabled', description: 'Collection testing')

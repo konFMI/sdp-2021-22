@@ -1,18 +1,13 @@
-student_incl = [
-    my_utils_inc
-]
+agrstudent_includes = include_directories('.')
 
-student_src_files = files(
+agrstudent_src_files = files(
     'student.cpp'
 )
 
-student_lib = shared_library('student',
-                             student_src_files)
+agrstudent_lib = shared_library('agrstudent',
+                                agrstudent_src_files)
 
-student_inc_dir = include_directories('.')
-student_incl += student_inc_dir
-
-student_dep = declare_dependency(
-    link_with: student_lib,
-    include_directories: student_incl,
+agrstudent_dep = declare_dependency(
+    link_with: agrstudent_lib,
+    include_directories: agrstudent_includes
 )

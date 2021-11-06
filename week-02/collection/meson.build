@@ -1,18 +1,15 @@
-collection_incl = [
-    my_utils_inc
+agrcollection_includes = [
+    include_directories('.')
 ]
 
-collection_src_files = files(
-    'TCollection.h'
+agrcollection_src_files = files(
+    'collection.h'
 )
 
-collection_lib = shared_library('collection',
-                                collection_src_files)
+agrcollection_lib = shared_library('agrcollection',
+                                   agrcollection_src_files)
 
-collection_inc_dir = include_directories('.')
-collection_incl += collection_inc_dir
-
-collection_dep = declare_dependency(
-    link_with: collection_lib,
-    include_directories: collection_incl
+agrcollection_dep = declare_dependency(
+    link_with: agrcollection_lib,
+    include_directories: agrcollection_includes
 )

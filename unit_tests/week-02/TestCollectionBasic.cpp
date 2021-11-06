@@ -1,12 +1,12 @@
 #include <stdio.h>
-#define DEBUG
-#include "TCollection.h"
+#include "collection.h"
+#include "agrutils.h"
 
 int main(int argc, char* argcv[]) {
 
-    printf("Test TCollection\n");
+    printf("Test Collection\n");
 
-    TCollection<int> integers;
+    Collection<int> integers;
 
     
     ReturnType ret = integers.Create(5);

@@ -1,4 +1,5 @@
-#include "test_include.h"
+#include "agrlog.h"
+#include "agrmemory.h"
 
 int TestMemoryUnitCallocModifyCompare() {
     char *str = nullptr;

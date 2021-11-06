@@ -1,4 +1,4 @@
-#include "my_susy.h"
+#include "susi.h"
 
 MySusy::MySusy()
 {
